@@ -1,17 +1,5 @@
-'''
-import requests
-import re
-
-res = requests.get('https://www.sheldonbrown.com')
-##body = re.findall('(?s)<body>(.*)<\/body>', res.text)[0]
-links = re.findall('<a\s+(?:[^>]*?\s+)?href=(["\'])(.*?)\1', res.text)
-
-print(links)
-'''
-
 from bs4 import BeautifulSoup
 import requests
-import re
 
 linksVisited = 0
 
@@ -34,8 +22,8 @@ while linksVisited < 50:
     soup = BeautifulSoup(data, "html.parser")
 
     for anchor in soup.find_all('a'):
-        link = anchor.get('href')
-        if link is not None and re.search("http.*", link) and link not in links:
+        link = anchor.get("href")
+        if link is not None and link.startswith("http") and link not in links:
             links.append(link)
 
 print(links)
