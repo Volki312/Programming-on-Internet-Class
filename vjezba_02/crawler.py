@@ -23,7 +23,7 @@ while linksVisited < 50:
 
     for anchor in soup.find_all('a'):
         link = anchor.get("href")
-        if link.startswith("http") and link not in links:
+        if link is not None and link.startswith("http") and link not in links:
             links.append(link)
 
 print(links)
