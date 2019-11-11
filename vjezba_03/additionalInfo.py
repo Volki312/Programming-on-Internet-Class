@@ -1,4 +1,4 @@
-#!C:\Users\Josip\AppData\Local\Programs\Python\Python38-32\python.exe
+#!C:\Users\Stana\AppData\Local\Programs\Python\Python38-32\python.exe
 
 import cgi
 
@@ -7,7 +7,10 @@ name = form.getvalue("name")
 status = form.getvalue("status")
 email = form.getvalue("email")
 course = form.getvalue("course")
-hasFinal = form.getvalue("hasFinal")
+if form.getvalue("hasFinal"):
+    hasFinal = form.getValue("hasFinal")
+else:
+    hasFinal = "Has no final"
 
 print('''
 <!DOCTYPE html>

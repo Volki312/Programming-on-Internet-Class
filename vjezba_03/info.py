@@ -1,9 +1,14 @@
-#!C:\Users\Josip\AppData\Local\Programs\Python\Python38-32\python.exe
+#!C:\Users\Stana\AppData\Local\Programs\Python\Python38-32\python.exe
 
 import cgi
 
 form = cgi.FieldStorage()
 name = form.getvalue("name")
+password = form.getvalue("password")
+passwordRepeat = form.getvalue("passwordRepeat")
+
+if password != passwordRepeat:
+    print('Refresh: 1; URL=login.py')
 
 print('''
 <!DOCTYPE html>

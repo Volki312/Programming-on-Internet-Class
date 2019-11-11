@@ -1,4 +1,4 @@
-#!C:\Users\Josip\AppData\Local\Programs\Python\Python38-32\python.exe
+#!C:\Users\Stana\AppData\Local\Programs\Python\Python38-32\python.exe
 
 import cgi
 
